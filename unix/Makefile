@@ -102,6 +102,10 @@ ifeq ($(MICROPY_PY_SOCKET),1)
 CFLAGS_MOD += -DMICROPY_PY_SOCKET=1
 SRC_MOD += modsocket.c
 endif
+ifeq ($(MICROPY_PY_THREAD),1)
+CFLAGS_MOD += -DMICROPY_PY_THREAD=1
+LDFLAGS_MOD += -lpthread
+endif
 
 ifeq ($(MICROPY_PY_FFI),1)
 
@@ -137,6 +141,7 @@ SRC_C = \
 	main.c \
 	gccollect.c \
 	unix_mphal.c \
+	mpthreadport.c \
 	input.c \
 	file.c \
 	modmachine.c \
