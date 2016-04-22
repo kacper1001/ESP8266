@@ -160,6 +160,7 @@ PY_O_BASENAME = \
 	modmicropython.o \
 	modstruct.o \
 	modsys.o \
+	modthread.o \
 	vm.o \
 	bc.o \
 	showbc.o \
